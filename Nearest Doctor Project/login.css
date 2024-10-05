@@ -70,32 +70,94 @@ body {
 h2 {
     font-size: 26px;
     color: #000000;
-    margin-bottom: 40px;
-}
-
-p {
-    font-size: 16px;
-    color: #000000;
-    opacity: 60%;
     margin-bottom: 30px;
 }
 
-.code-inputs {
+
+/* form */
+
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 15px;
+    color: #777;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-bottom: 1px solid #000;
+}
+
+.form-options {
     display: flex;
-    gap: 10px;
-    margin-bottom: 60px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 12px;
 }
 
-.code-inputs input {
-    width: 45px;
-    height: 42px;
-    text-align: center;
-    font-size: 18px;
-    border: 1px solid #999999;
+.form-options label {
+    display: flex;
+    align-items: center;
+}
+
+.form-options input {
+    margin-right: 5px;
+}
+
+.forgot-password {
+    text-decoration: none;
+    color: #777;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: darkred;
+}
+
+.signup-option {
     margin-top: 20px;
+    font-size: 12px;
 }
 
-#popupBtn {
+.signup-link {
+    color: red;
+    text-decoration: none;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+
+.login-button {
     background-color: #e70a02;
     color: white;
     padding: 8px 90px;
@@ -103,19 +165,24 @@ p {
     border-radius: 25px;
     cursor: pointer;
     font-size: 16px;
+    margin-top: 20px;
 }
 
-#popupBtn:hover{
+.login-button:hover{
     background-color: #f5261e;
 }
 
-.resend-code {
-    color: #e70a02;
+.signup-code {
+    color: #504f4f;
     text-decoration: none;
     font-size: 14px;
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
-.resend-code:hover {
+span1{
+    color: red;
+}
+
+span1:hover {
     text-decoration: underline;
 }

@@ -14,13 +14,8 @@
             padding: 50px;
         }
 
-        
         .content {
             transition: filter 0.3s ease; 
-        }
-
-        .blur-background {
-            filter: blur(5px);
         }
 
         .popup {
@@ -37,12 +32,12 @@
             width: 350px;
         } 
 
-        .cm{
+        .cm {
             width: 40px;
             padding-top: 10px;
         }
 
-        .verified{
+        .verified {
             font-size: 13px;
             padding-top: 20px;
         }
@@ -51,16 +46,21 @@
             margin-bottom: 20px;
             font-size: 17px;
             padding-top: 10px;
+            color: black;
         }
 
         #closePopup {
-            padding: 5px 10px;
+            padding: 5px 20px;
             font-size: 14px;
             cursor: pointer;
-            background-color: #21a537;
+            background-color: #e70a02;
             color: white;
             border-radius: 15px;
             border: none;
+        }
+
+        #closePopup:hover {
+            background-color: #f5261e;
         }
 
         .overlay {
@@ -77,9 +77,27 @@
 
 </head>
 <body>
-    <div class="diagonal-split"></div>
 
+    
+    <div class="diagonal-split"></div>
+    
     <div class="gradient-overlay">
+        <!-- <nav>
+            
+            <a href="landing-page.html"><img src="img/ddnd logo.png" alt="" class="logo1"></a>
+        
+            <ul>
+                <a href="landing-page.html"><li>Home</li></a>
+                <a href="landing-page.html#about-us"><li>About</li></a>
+                <a href="landing-page.html#services"><li>Services</li></a>
+                <a href=""><li>Pricing</li></a>
+                <a href=""><li>Contact us</li></a>
+            </ul>
+    
+            <a href="login.html"><button class="login-button">Login</button></a>
+            <button class="register-button">Register</button>
+    
+        </nav> -->
         <div class="border1">
             <div class="image-container">
                 <img src="img/doctor.jpeg" alt="Doctor" class="doctor">
@@ -90,33 +108,29 @@
                 <h2>Email Verification</h2>
                 <p>Please enter the 4-digit code sent to <br> <strong>lucycynthia@gmail.com</strong></p>
                 <div class="code-inputs">
-                   
-                    <input type="text" maxlength="1">
-                    <input type="text" maxlength="1">
-                    <input type="text" maxlength="1">
-                    <input type="text" maxlength="1">
+                    
+                    <input type="text" maxlength="1" onkeyup="moveToNext(this, 'otp2')" id="otp1">
+                    <input type="text" maxlength="1" onkeyup="moveToNext(this, 'otp3')" id="otp2">
+                    <input type="text" maxlength="1" onkeyup="moveToNext(this, 'otp4')" id="otp3">
+                    <input type="text" maxlength="1" onkeyup="moveToNext(this, '')" id="otp4">
                 </div>
                 
-                <!-- Content that will be blurred -->
                 <div class="content">
                     <button id="popupBtn">Verify</button>
                 </div>
 
-                <!-- Overlay for background blur -->
                 <div id="overlay" class="overlay"></div>
 
-                <!-- Popup message -->
                 <div id="popupMessage" class="popup">
                     <img src="img/check mark.png" alt="" class="cm">
                     <div class="verified"><h1>Verified</h1></div> 
-                    <div class="success"><p> <strong>Lucy!</strong> You have successfully verified <br> your account</p></div>
+                    <div class="success"><p><strong>Lucy!</strong> You have successfully verified <br> your account</p></div>
                     <button id="closePopup">Close</button>
                 </div>
 
-                    <a href="#" class="resend-code">Resend Code</a>
+                <a href="#" class="resend-code">Resend Code</a>
             
             </div>
-        
         </div>
     </div>
 
@@ -138,6 +152,15 @@
             overlay.style.display = 'none';  // Hide the dark overlay
             content.classList.remove('blur-background');  // Remove blur when popup is closed
         });
+
+        // moveToNext function for automatic input focus
+        function moveToNext(current, nextFieldID) {
+            if (current.value.length === current.maxLength) {
+                if (nextFieldID) {
+                    document.getElementById(nextFieldID).focus();
+                }
+            }
+        }
     </script>
 </body>
 </html>
